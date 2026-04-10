@@ -1,0 +1,182 @@
+{
+  "id": "bff3a064-8a08-429b-a7a8-c4edca2a2859",
+  "revision": 0,
+  "last_node_id": 100,
+  "last_link_id": 162,
+  "nodes": [
+    {
+      "id": 99,
+      "type": "LoadImage",
+      "pos": [
+        2291.2483026604605,
+        2058.4018999034693
+      ],
+      "size": [
+        264,
+        336
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            161
+          ]
+        },
+        {
+          "label": "遮罩",
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.24",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "8839cb651cc5572a32d9065fb496dc48.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 100,
+      "type": "ShowText|pysssss",
+      "pos": [
+        3249.3667221550886,
+        2039.041899903469
+      ],
+      "size": [
+        309.4000000000001,
+        293.81338256835943
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 162
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "f2838ed5e59de4d73cde5c98354b87a8d3200190",
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 98,
+      "type": "Gemini-Image-To-Prompt",
+      "pos": [
+        2666.513191881651,
+        1963.6552354747573
+      ],
+      "size": [
+        400,
+        354
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ref_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 161
+        },
+        {
+          "name": "video",
+          "shape": 7,
+          "type": "VIDEO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            162
+          ]
+        },
+        {
+          "name": "API Respond",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Gemini-Image-To-Prompt"
+      },
+      "widgets_values": [
+        "",
+        "https://api.easyart.cc",
+        "gemini-3-pro-image-preview",
+        "",
+        "You are a helpful assistant",
+        "describe the image",
+        0.6,
+        491894091,
+        "randomize",
+        "随机化 (Randomize)"
+      ]
+    }
+  ],
+  "links": [
+    [
+      161,
+      99,
+      0,
+      98,
+      0,
+      "IMAGE"
+    ],
+    [
+      162,
+      98,
+      0,
+      100,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9090909090909097,
+      "offset": [
+        -1838.4574824943898,
+        -1656.6340970761614
+      ]
+    },
+    "frontendVersion": "1.35.9",
+    "workflowRendererVersion": "LG",
+    "workspace_info": {
+      "id": "hEuRrom_DkiLaNlzMsgJy",
+      "saveLock": false,
+      "cloudID": null,
+      "coverMediaPath": null
+    },
+    "ue_links": []
+  },
+  "version": 0.4
+}

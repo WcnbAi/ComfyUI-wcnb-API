@@ -1,0 +1,22 @@
+# ComfyUI完整版本（包含torch）
+# 适用于ComfyUI环境，需要torch支持
+
+# PyTorch核心（CPU版本，如果需要GPU请使用对应的CUDA版本）
+torch>=1.9.0,<2.5.0
+torchvision>=0.10.0,<0.21.0
+
+# 图像和数值计算
+numpy>=1.21.0,<2.0.0
+Pillow>=10.1.0,<11.0.0
+
+# 网络请求
+requests>=2.25.0,<3.0.0
+
+# 说明：
+# - torch < 2.5.0: 避免最新版本的兼容性问题
+# - numpy < 2.0.0: torch需要numpy 1.x版本
+# - Pillow 10.x: 与torchvision兼容
+# - 如果使用GPU，请安装对应的CUDA版本，例如：
+#   torch==2.3.1+cu121
+#   torchvision==0.18.1+cu121
+
